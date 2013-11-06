@@ -1,31 +1,28 @@
-package main
+package gobuilder
 
 import(
-    "github.com/gorilla/mux"
     "net/http"
     "log"
+    "flag"
+    "fmt"
 )
 
-func LogRequest(r *http.Request){
-    log.Printf("%s: %s", r.RemoteAddr, r.URL.Path)
-}
-
-func FileHandler(rw http.ResponseWriter, r *http.Request){
-    LogRequest(r)
-    vars := mux.Vars(r)
-    file := vars["file"]
-    if file == "" {
-        http.ServeFile(rw, r, "web/index.html")
-    }else{
-        http.ServeFile(rw, r, "web/"+file)
-    }
-}
 
 func main(){
-    r := mux.NewRouter()
-    r.HandleFunc("/{file:.*}", FileHandler).Methods("GET")
+    //The port flag
+    portflag := flag.String("port", "3000",
+    "The port to host the server on, default: 3000")
+
+    flag.Parse()
+
+    port := fmt.Sprintf(":%s", *portflag)
+
+
+    r := GetRouter()
     http.Handle("/", r)
-    err := http.ListenAndServe(":3000", nil)
+
+    log.Printf("Starting server on port: %s", *portflag)
+    err := http.ListenAndServe(port, nil)
     if err != nil {
         log.Fatal("ListenAndServe: ", err)
     }
