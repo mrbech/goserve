@@ -9,4 +9,4 @@ go
 *.so
 _obj
 _test
-gobuilder
+goserve
