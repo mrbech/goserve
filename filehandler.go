@@ -10,7 +10,7 @@ func FileHandler(rw http.ResponseWriter, r *http.Request){
     vars := mux.Vars(r)
     file := vars["file"]
     if file == "" {
-        http.ServeFile(rw, r, hostfolder+index)
+        http.ServeFile(rw, r, hostfolder+indexfile)
     }else{
         http.ServeFile(rw, r, hostfolder+file)
     }

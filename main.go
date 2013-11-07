@@ -9,19 +9,19 @@ import(
 
 var hostfolder string
 var port string
-var index string
+var indexfile string
 
 func main(){
     //The port flag
     portflag := flag.String("port", "3000",
-    "The port to host the server on, default is 3000")
+    "The port to serve to, default is 3000")
 
     //Host folder
     folder := flag.String("folder", ".",
-    "Folder to host, default is current folder")
+    "Folder to serve, default is the current folder")
 
     //Index file
-    index = *flag.String("index", "index.html",
+    index := flag.String("index", "index.html",
     "Index file, default is index.html")
 
     flag.Parse()
@@ -29,6 +29,8 @@ func main(){
     hostfolder = fmt.Sprintf("%s/", *folder)
 
     port = fmt.Sprintf(":%s", *portflag)
+
+    indexfile = *index
 
 
     r := GetRouter()
