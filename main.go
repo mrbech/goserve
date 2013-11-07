@@ -6,6 +6,7 @@ import(
     "flag"
     "fmt"
 )
+
 var hostfolder string
 var port string
 
@@ -20,8 +21,7 @@ func main(){
 
     flag.Parse()
 
-    hostfolder = fmt.Sprintf("%s/",folder)
-    fmt.Printf("%s",hostfolder)
+    hostfolder = fmt.Sprintf("%s/", *folder)
 
     port = fmt.Sprintf(":%s", *portflag)
 
