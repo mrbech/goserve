@@ -5,6 +5,9 @@ import(
     "net/http"
 )
 
+/*
+Handles the file serving
+*/
 func FileHandler(rw http.ResponseWriter, r *http.Request){
     LogRequest(r)
     vars := mux.Vars(r)
