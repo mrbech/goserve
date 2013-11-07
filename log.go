@@ -1,4 +1,4 @@
-package gobuilder
+package main
 import(
     "log"
     "net/http"

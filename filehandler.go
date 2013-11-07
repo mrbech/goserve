@@ -1,12 +1,11 @@
-package gobuilder
+package main
 
 import(
     "github.com/gorilla/mux"
     "net/http"
-    "bitbucket.org/gobuilder/server/log"
 )
 
-func FileHandler(hostfolder string, rw http.ResponseWriter, r *http.Request){
+func FileHandler(rw http.ResponseWriter, r *http.Request){
     LogRequest(r)
     vars := mux.Vars(r)
     file := vars["file"]

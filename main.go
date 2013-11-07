@@ -5,9 +5,9 @@ import(
     "log"
     "flag"
     "fmt"
-    "bitbucket.org/gobuilder/server/routes"
-    "bitbucket.org/gobuilder/server/log"
 )
+var hostfolder string
+var port string
 
 func main(){
     //The port flag
@@ -18,12 +18,12 @@ func main(){
     folder := flag.String("folder", "web",
     "The folder to host the webpage from default: web")
 
-    hostfolder := fmt.Sprintf("%s/",folder)
+    hostfolder = fmt.Sprintf("%s/",folder)
 
-    port := fmt.Sprintf(":%s", *portflag)
+    port = fmt.Sprintf(":%s", *portflag)
 
 
-    r := GetRouter(hostfolder)
+    r := GetRouter()
     http.Handle("/", r)
 
     flag.Parse()
