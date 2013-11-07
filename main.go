@@ -18,7 +18,10 @@ func main(){
     folder := flag.String("folder", "web",
     "The folder to host the webpage from default: web")
 
+    flag.Parse()
+
     hostfolder = fmt.Sprintf("%s/",folder)
+    fmt.Printf("%s",hostfolder)
 
     port = fmt.Sprintf(":%s", *portflag)
 
@@ -26,7 +29,6 @@ func main(){
     r := GetRouter()
     http.Handle("/", r)
 
-    flag.Parse()
 
     log.Printf("Starting server on port: %s", *portflag)
     err := http.ListenAndServe(port, nil)
