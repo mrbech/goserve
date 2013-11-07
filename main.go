@@ -13,11 +13,11 @@ var port string
 func main(){
     //The port flag
     portflag := flag.String("port", "3000",
-    "The port to host the server on, default: 3000")
+    "The port to host the server on")
 
     //Host folder
     folder := flag.String("folder", "web",
-    "The folder to host the webpage from default: web")
+    "The folder with the webpage to host")
 
     flag.Parse()
 
