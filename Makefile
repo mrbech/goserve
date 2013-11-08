@@ -18,8 +18,7 @@ maninstall: man/goserve.1
 	gzip /usr/share/man/man1/goserve.1
 
 clean:
-	rm goserve
+	go clean
 
 uninstall:
 	rm /usr/share/man/man1/goserve.1.gzip
-	rm /usr/bin/goserve
