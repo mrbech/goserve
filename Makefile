@@ -22,3 +22,4 @@ clean:
 
 uninstall:
 	rm /usr/share/man/man1/goserve.1.gzip
+	rm /usr/bin/goserve
