@@ -19,3 +19,6 @@ To uninstall run
 #Dependencies
 * [Go](http://golang.org)
 * [Gorilla web toolkit](http://www.gorillatoolkit.org/pkg/mux)
+
+#Resources and documentation
+See the git reposity for code and documentation: https://github.com/mrobitu/Goserve/  
