@@ -24,7 +24,7 @@ import(
     "fmt"
 )
 
-//Location of the hostfolder in the format: folder/
+//Location of the host folder in the format: folder/
 var hostfolder string
 //The port number in the format: :port
 var port string
