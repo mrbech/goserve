@@ -21,4 +21,4 @@ To uninstall run
 * [Gorilla web toolkit](http://www.gorillatoolkit.org/pkg/mux)
 
 ##Resources and documentation
-See the git reposity for code and documentation: https://github.com/mrobitu/Goserve/  
+See the git repository for code and documentation: https://github.com/mrobitu/Goserve/  
