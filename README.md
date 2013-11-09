@@ -11,10 +11,12 @@ To install the program using go's installation system run
 ##Linux man page
 To install the man page
 >cd $GOPATH/src/github.com/mrobitu/goserve
+
 >make maninstall
 
 To uninstall the man page
 >cd $GOPATH/src/github.com/mrobitu/goserve
+
 >make manuninstall
 
 ##Dependencies
