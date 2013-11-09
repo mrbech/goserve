@@ -14,6 +14,7 @@ This file is part of Goserve.
     You should have received a copy of the GNU General Public License
     along with Goserve.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 package main
 import(
     "log"

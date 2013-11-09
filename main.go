@@ -14,6 +14,7 @@ This file is part of Goserve.
     You should have received a copy of the GNU General Public License
     along with Goserve.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 package main
 
 import(
@@ -23,9 +24,11 @@ import(
     "fmt"
 )
 
-//Gobal config variables
+//Location of the hostfolder in the format: folder/
 var hostfolder string
+//The port number in the format: :port
 var port string
+//The index page files, that will be served on "/" requests
 var indexfile string
 
 func main(){
