@@ -5,20 +5,22 @@ debugging and viewing files in a browser.
 
 ##Installation
 To install the program using go's installation system run 
-> make goinstall
+>go get github.com/mrobitu/goserve
+>go install goserve
 
-To install it to /usr/bin run
-> make install
+##Linux man page
+To install the man page
+>cd $GOPATH/src/github.com/mrobitu/goserve
+>make maninstall
 
-To install the manpage run
-> make maninstall
-
-To uninstall run
-> make uninstall
+To uninstall the man page
+>cd $GOPATH/src/github.com/mrobitu/goserve
+>make manuninstall
 
 ##Dependencies
 * [Go](http://golang.org)
 * [Gorilla web toolkit](http://www.gorillatoolkit.org/pkg/mux)
 
 ##Resources and documentation
-See the git repository for code and documentation: https://github.com/mrobitu/Goserve/  
+See the git repository for code and documentation:
+https://github.com/mrobitu/Goserve/  
