@@ -6,7 +6,7 @@ debugging and viewing files in a browser.
 ##Installation
 To install the program using go's installation system run 
 >go get github.com/mrobitu/goserve
->go install goserve
+>go install github.com/mrobitu/goserve
 
 ##Linux man page
 To install the man page
