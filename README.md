@@ -5,20 +5,23 @@ debugging and viewing files in a browser.
 
 ##Installation
 To install the program using go's installation system run 
->go get github.com/mrobitu/goserve
-
->go install github.com/mrobitu/goserve
+```
+go get github.com/mrobitu/goserve
+go install github.com/mrobitu/goserve
+```
 
 ##Linux man page
 To install the man page
->cd $GOPATH/src/github.com/mrobitu/goserve
-
->make maninstall
+```
+cd $GOPATH/src/github.com/mrobitu/goserve
+make maninstall
+```
 
 To uninstall the man page
->cd $GOPATH/src/github.com/mrobitu/goserve
-
->make manuninstall
+```
+cd $GOPATH/src/github.com/mrobitu/goserve
+make manuninstall
+```
 
 ##Dependencies
 * [Go](http://golang.org)
