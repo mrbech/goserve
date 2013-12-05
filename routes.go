@@ -22,7 +22,7 @@ import(
 )
 
 /*
-Setup the Router
+GetRouter setup the Router
 */
 func GetRouter() *mux.Router{
     r := mux.NewRouter()

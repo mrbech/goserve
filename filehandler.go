@@ -23,7 +23,7 @@ import(
 )
 
 /*
-Handles the file serving
+FileHandler handles the file serving
 */
 func FileHandler(rw http.ResponseWriter, r *http.Request){
     LogRequest(r)
