@@ -17,48 +17,48 @@ This file is part of Goserve.
 
 package main
 
-import(
-    "net/http"
-    "log"
-    "flag"
-    "fmt"
+import (
+	"flag"
+	"fmt"
+	"log"
+	"net/http"
 )
 
 //Location of the host folder in the format: folder/
 var hostfolder string
+
 //The port number in the format: :port
 var port string
+
 //The index page files, that will be served on "/" requests
 var indexfile string
 
-func main(){
-    //Setup the commandline flags
-    portflag := flag.String("port", "3000",
-    "The port to serve to, default is 3000")
+func main() {
+	//Setup the commandline flags
+	portflag := flag.String("port", "3000",
+		"The port to serve to")
 
-    folderflag := flag.String("folder", ".",
-    "Folder to serve, default is the current folder")
+	folderflag := flag.String("folder", ".",
+		"Folder to serve")
 
-    indexflag := flag.String("index", "index.html",
-    "Index file, default is index.html")
+	indexflag := flag.String("index", "index.html",
+		"Index file")
 
-    flag.Parse()
+	flag.Parse()
 
-    //Setup the shared config variables
-    hostfolder = fmt.Sprintf("%s/", *folderflag)
-    port = fmt.Sprintf(":%s", *portflag)
-    indexfile = *indexflag
+	//Setup the shared config variables
+	hostfolder = fmt.Sprintf("%s/", *folderflag)
+	port = fmt.Sprintf(":%s", *portflag)
+	indexfile = *indexflag
 
+	//Setup the routing
+	r := GetRouter()
+	http.Handle("/", r)
 
-    //Setup the routing
-    r := GetRouter()
-    http.Handle("/", r)
-
-
-    //Start the server
-    log.Printf("Starting server on port: %s", *portflag)
-    err := http.ListenAndServe(port, nil)
-    if err != nil {
-        log.Fatal("Could not start the server: ", err)
-    }
+	//Start the server
+	log.Printf("Starting server on port: %s", *portflag)
+	err := http.ListenAndServe(port, nil)
+	if err != nil {
+		log.Fatal("Could not start the server: ", err)
+	}
 }

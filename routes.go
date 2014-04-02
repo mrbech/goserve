@@ -17,16 +17,16 @@ This file is part of Goserve.
 
 package main
 
-import(
-    "github.com/gorilla/mux"
+import (
+	"github.com/gorilla/mux"
 )
 
 /*
 GetRouter setup the Router
 */
-func GetRouter() *mux.Router{
-    r := mux.NewRouter()
-    r.HandleFunc("/{file:.*}", FileHandler).Methods("GET")
+func GetRouter() *mux.Router {
+	r := mux.NewRouter()
+	r.HandleFunc("/{file:.*}", FileHandler).Methods("GET")
 
-    return r
+	return r
 }

@@ -16,14 +16,15 @@ This file is part of Goserve.
 */
 
 package main
-import(
-    "log"
-    "net/http"
+
+import (
+	"log"
+	"net/http"
 )
 
 /*
 LogRequest logs an incoming request
 */
-func LogRequest(r *http.Request){
-    log.Printf("%s: %s", r.RemoteAddr, r.URL.Path)
+func LogRequest(r *http.Request) {
+	log.Printf("%s: %s %s", r.RemoteAddr, r.Method, r.URL.Path)
 }
